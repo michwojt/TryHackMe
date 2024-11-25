@@ -9,3 +9,7 @@ nmap -sn 10.10.x.x/24
 # -p- Scans all 65,535 TCP ports (by default, Nmap only scans the top 1,000 common ports). This ensures no ports are missed, which is useful for comprehensive troubleshooting or security
 
 nmap -sC -sV -p- 10.10.x.x
+
+#Output results to file
+
+nmap -sC -sV -p- 10.10.x.x -oN initial_scan.txt
