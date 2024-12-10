@@ -129,3 +129,9 @@ showmount -e
 #mount 
 mount -o rw target:/folder folder
 #chmod +s
+
+#Linpeas
+#Download
+wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
+#Copy to target
+scp -i id_rsa linpeas.sh user@target:/tmp/
