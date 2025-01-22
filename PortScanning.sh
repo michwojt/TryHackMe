@@ -10,6 +10,9 @@ nmap -sn 10.10.x.x/24
 
 nmap -sC -sV -p- 10.10.x.x
 
+#Scans for vulnerabilities
+nmap -sV --script vuln 10.10.x.x
+
 #Output results to file
 
 nmap -sC -sV -p- 10.10.x.x -oN initial_scan.txt
