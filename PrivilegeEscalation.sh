@@ -76,6 +76,9 @@ find / -amin -60
 find / -size +50M
 #Find world-writeable folders
 find / -writable -type d 2>/dev/null
+#Exlude useless results
+find /  -type f -writable 2>/dev/null | grep -Ev '^(/proc|/snap|/sys|/dev)'
+
 find / -perm -222 -type d 2>/dev/null
 find / -perm -o w -type d 2>/dev/null
 # Find files with the SUID bit
