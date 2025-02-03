@@ -14,3 +14,18 @@ ssh2john.py /path/to/key > hash.txt
 
 #Crack passphrase using wordlist
 /run/john/ hash.txt --wordlist=/path
+
+#Identify hash
+wget https://gitlab.com/kalilinux/packages/hash-identifier/-/raw/kali/master/hash-id.py
+python3 hash-id.py
+
+#Find list format for john
+john --list=formats | grep -iF "md5"
+#Execute john with defined format
+john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.txt
+#Unashadow
+unshadow local_passwd local_shadow > unshadowed.txt
+#Single mode
+john --single --format=raw-md5 hash07.txt
+#zip files
+zip2john [options] [zip file] > [output file]
